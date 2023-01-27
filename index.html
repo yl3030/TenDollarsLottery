@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十元來抽獎</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header_nav">
+                <ul class="d-lg-flex align-items-center">
+                    <li><a class="active" href="./index.html">首頁</a></li>
+                    <li><a href="">來抽獎</a></li>
+                    <li><a href="">來奪寶</a></li>
+                    <li><a href="">規則說明</a></li>
+                    <li><a href="">關於我們</a></li>
+                    <li><a href="">查詢中獎</a></li>
+                </ul>
+            </nav>
+            <div class="header_menu d-lg-none">
+                <div class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="home">
+            <img class="w-100 d-lg-block d-none" src="./public/img/bg.png" alt="">
+            <img class="w-100 d-lg-none d-sm-block d-none" src="./public/img/bg-plate.png" alt="">
+            <img class="w-100 d-sm-none" src="./public/img/bg-m.png" alt="">
+            <div class="home_main">
+                <img class="home_main_pic d-sm-block d-none" src="./public/img/main.png" alt="">
+                <img class="home_main_pic d-sm-none" src="./public/img/main-m.png" alt="">
+                <ul class="home_inform d-sm-flex align-items-center justify-content-center">
+                    <li>
+                        <span class="home_inform_title">開獎日</span>
+                        <span class="home_inform_date">2022/12/12</span>
+                    </li>
+                    <li>
+                        <span class="home_inform_title">截止日</span>
+                        <span class="home_inform_date">2022/12/12</span>
+                    </li>
+                </ul>
+                <button class="btn-join" data-bs-toggle="modal" data-bs-target="#modal-join">我要參加</button>
+                <p class="join-num">已有1000人參加抽獎</p>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade modal-common" id="modal-join" tabindex="-1" aria-labelledby="modal-joinLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-common_title">我要參加</h5>
+                <form action="">
+                    <div class="modal_input">
+                        <label for="">姓名</label>
+                        <input type="text">
+                    </div>
+                    <div class="modal_input">
+                        <label for="">電話</label>
+                        <input type="text">
+                    </div>
+                    <div class="modal_input modal_input-num">
+                        <label for="">我要抽</label>
+                        <div class="modal_input-num_inner">
+                            <div class="modal_input-num_content">
+                                <div class="modal_input-num_btn minus"><img src="./public/img/icon_minus.png" alt=""></div>
+                                <input type="number">
+                                <div class="modal_input-num_btn plus"><img src="./public/img/icon_plus.png" alt=""></div>
+                            </div>
+                            <span class="unit">張</span>
+                        </div>
+                    </div>
+                    <ul class="modal_list mt-3">
+                        <li>訂單金額若未超過10元，則會抽取15元金流手續費，請務必瞭解</li>
+                        <li>請輸入正確電話與姓名，中獎後會核對資料，謝謝！</li>
+                        <li>完成付款會有訂單號或是在中獎查詢輸入相關資料，以便您查詢中獎資訊</li>
+                    </ul>
+                    <button class="modal_send" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modal-login">送出</button>
+                    <button class="modal_close" data-bs-dismiss="modal"><img src="./public/img/icon_cross.png" alt=""></button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-common" id="modal-login" tabindex="-1" aria-labelledby="modal-loginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-common_title">會員登入</h5>
+                <form action="">
+                    <div class="modal_input">
+                        <label for="">手機</label>
+                        <input type="number">
+                    </div>
+                    <div class="modal_input">
+                        <label for="">密碼</label>
+                        <input type="password">
+                    </div>
+                    <button class="modal_send btn-lottery" onclick="videoPlay()" data-bs-dismiss="modal">送出</button>
+                    <button class="modal_close" data-bs-dismiss="modal"><img src="./public/img/icon_cross.png" alt=""></button>
+                    <button class="modal_smallBtn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modal-forget">忘記密碼請點我</button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-common" id="modal-forget" tabindex="-1" aria-labelledby="modal-forgetLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-common_title">忘記密碼</h5>
+                <form action="">
+                    <div class="modal_input">
+                        <label for="">手機</label>
+                        <input type="number">
+                    </div>
+                    <button class="modal_send" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modal-send">送出</button>
+                    <button class="modal_close" data-bs-dismiss="modal"><img src="./public/img/icon_cross.png" alt=""></button>
+                    <button class="modal_smallBtn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modal-login">我要登入</button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-common" id="modal-send" tabindex="-1" aria-labelledby="modal-sendLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-common_title">已傳送簡訊</h5>
+                <img class="modal_icon" src="./public/img/icon_check.svg" alt="">
+                <form action="">
+                    <button class="modal_send" data-bs-dismiss="modal">確認</button>
+                    <button class="modal_close" data-bs-dismiss="modal"><img src="./public/img/icon_cross.png" alt=""></button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="animation">
+        <div class="animation_content">
+            <div class="animation_inner">
+                <video id="animation_video" loop playsinline src="./public/img/lottey.mp4"></video>
+            </div>
+        </div>
+    </div>
+
+    <div class="lottery_notify">
+        <p>您已參加抽獎，請耐心等候結果～</p>
+        <button class="lottery_notify_btn" onclick="videoPause()">確定</button>
+    </div>
+
+
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/common.js"></script>
+
+    <script>
+        
+        // video
+        let video = document.getElementById("animation_video");
+
+        $(".btn-lottery").click(function(){
+            $(".animation").fadeIn(1000).css("display","flex");
+            $(".lottery_notify").delay(5000).fadeIn(300);
+        })
+
+        $(".lottery_notify_btn").click(function(){
+            $(".animation").fadeOut(300);
+            $(".lottery_notify").fadeOut(300);
+        })
+
+        function videoPlay(){
+            video.play();
+        }
+
+        function videoPause(){
+            video.ended();
+        }
+    </script>
+</body>
+</html>
