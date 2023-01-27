@@ -16,3 +16,10 @@ $(document).click(function (event) {
     }
 });
 
+$(window).on("resize scroll",function(){
+    if($(window).scrollTop()>0 && $(window).width()>=992) {
+        $(".header").addClass("scroll");
+    }else {
+        $(".header").removeClass("scroll");
+    }
+})
