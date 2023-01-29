@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十元來抽獎</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header_nav">
+                <ul class="d-lg-flex align-items-center">
+                    <li><a href="./index.html">來抽獎</a></li>
+                    <li><a href="./treasure.html">來奪寶</a></li>
+                    <li><a href="./introduce.html">規則說明</a></li>
+                    <li><a class="active" href="./member_lottery_join.html">查詢中獎</a></li>
+                </ul>
+            </nav>
+            <div class="header_menu d-lg-none">
+                <div class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="banner-member">
+            <div class="container d-flex flex-wrap justify-content-between">
+                <div class="banner-member_info">
+                    <div class="banner-member_pic"><img class="banner-member_pic_main" src="./public/img/pic2.png" alt=""></div>
+                    <form action="" class="banner-member_form">
+                        <div class="banner-member_input">
+                            <label for="">姓名</label>
+                            <input type="text">
+                        </div>
+                        <div class="banner-member_input">
+                            <label for="">電話</label>
+                            <input type="number">
+                        </div>
+                        <button>變更</button>
+                    </form>
+                </div>
+                <div class="banner-member_edit">
+                    <div class="banner-member_money">
+                        <img src="./public/img/money.png" alt="">
+                        <span>$500</span>
+                    </div>
+                    <div class="banner-member_btn">
+                        <button>
+                            <input type="file" class="btn_changePic">
+                            更換<br>大頭貼
+                        </button>
+                        <button data-bs-toggle="modal" data-bs-target="#modal-password">更換<br>密碼</button>
+                    </div>
+                </div>
+            </div>
+            <img class="banner_style d-md-block d-none" src="./public/img/banner-style.png" alt="">
+            <img class="banner_style d-md-none" src="./public/img/banner-style-m.png" alt="">
+        </div>
+
+        
+
+        <div class="member_content">
+            <div class="tab-member">
+                <ul>
+                    <li><a href="./member_lottery_join.html">來抽獎</a></li>
+                    <li><a href="./member_treasure_join.html">來奪寶</a></li>
+                    <li><a href="./member_money.html" class="active">寶寶幣</a></li>
+                    <li><a href="./member_unfinish_lottery.html">未完成<br class="d-sm-none">訂單</a></li>
+                </ul>
+            </div>
+            <div class="member_saveMoney">
+                <label for="">儲值</label>
+                <input type="number">
+                <button>確定</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>Copyright © 2023 XXXXX</footer>
+
+
+
+
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/common.js"></script>
+</body>
+</html>

@@ -23,3 +23,40 @@ $(window).on("resize scroll",function(){
         $(".header").removeClass("scroll");
     }
 })
+
+let img;
+$(".btn_changePic").change(function(e) {
+    img = $(".banner-member_pic_main");
+    readURL(e.target);
+})
+function readURL(input) {
+    if(input.files && input.files[0]){
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            img.attr('src', e.target.result);
+            img.css("opacity", "1");
+        }
+        reader.readAsDataURL(input.files[0]);
+    }   
+}
+
+$(".modal_input-num_btn").click(function(){
+    let num = $(this).parents(".modal_input-num_content").children("input").val();
+    let numInt;
+    if(num<=0 || num=="") {
+        numInt = 0;
+    }else {
+        numInt = parseInt(num);
+    }
+    console.log(numInt);
+    if($(this).hasClass("minus")) {
+        if(numInt <= 0) {
+            numInt = 0;
+        }else {
+            numInt = numInt - 1;
+        }
+    }else if($(this).hasClass("plus")) {
+        numInt = numInt + 1;
+    }
+    $(this).parents(".modal_input-num_content").children("input").val(numInt);
+})
